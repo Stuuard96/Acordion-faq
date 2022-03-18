@@ -22,3 +22,102 @@ body {
 *:after {
   box-sizing: inherit;
 }
+
+.main__acordion {
+  min-height: 100vh;
+  background-color: var(--terciary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acordion {
+  background-color: #fff;
+  width: 600px;
+  border-top: 0.6rem solid;
+  box-shadow: 0 5px 5px 1px rgba(163, 117, 117, 2);
+  padding: 40px;
+}
+
+.acordion__item {
+  border-top: 0.1rem solid #eee;
+  padding-top: 3.2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 4.8rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: 1.2px;
+}
+
+button {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--primary-color);
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button i {
+  margin-left: 1.6rem;
+}
+
+button i.fa-angle-up {
+  display: none;
+}
+
+.response {
+  color: var(--terciary-color);
+  padding-top: 1.6rem;
+  font-size: 1.3rem;
+  margin: 0 0 1.6rem;
+  letter-spacing: 0.7px;
+  line-height: 24px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: opacity 0.3s linear, max-height 0.3s linear;
+}
+
+/*--------------------Abrir Acordeon------------------------*/
+button.openned ~ .response {
+  max-height: 300px;
+  opacity: 1;
+  transition: opacity 0.3s linear, max-height 0.3s linear;
+}
+
+button.openned i.fa-angle-down {
+  display: none;
+}
+
+button.openned i.fa-angle-up {
+  display: block;
+}
+
+/*------------------------- <640px*-------------------------*/
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .acordion {
+    width: 340px;
+  }
+  button span {
+    font-size: 1.3rem;
+  }
+  .response {
+    font-size: 1.2rem;
+  }
+}
